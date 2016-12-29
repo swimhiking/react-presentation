@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p id="myele"></p>
+	<script>
+		function fun(n,o){		
+			console.log(n);
+			document.getElementById('myele').innerHTML += n + "<br/>";
+			return{
+				fun: function(m){
+					return fun(m,n);
+				}
+			}
+		}
+
+		var a = fun(0).fun(1).fun(2).fun(3);
+	</script>
+</body>
+</html>
