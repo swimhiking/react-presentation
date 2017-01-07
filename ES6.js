@@ -1,16 +1,3 @@
-///ES5
-function fun(n,o){
-	console.log(n);
-	return{
-		fun: function(m){
-			return fun(m,n);
-        }
-    }
-}
-
-var a = fun(0).fun(1).fun(2).fun(3);
-
-
 //example1 let
 var a = [];
 for (let i = 0; i < 10; i++) {
@@ -53,5 +40,29 @@ console.log(id, status, number);
 
 //Reduce
 let l = [2,3,4,5].reduce((a,b) =>a*b);
-//map: iterator
 
+
+//Arrow function
+var user = {
+	name: 'Allen',
+	sayHi: ()=> {
+		console.log(arguments);
+		console.log(`Hi, I'm ${this.name}`);		
+	},
+	sayHello(){
+		console.log(arguments);
+		console.log(`Hi, I'm ${this.name}`);
+	}
+};
+user.sayHi(1,2,3);
+user.sayHello(1,2,3);
+
+console.log("state1", state1);
+console.log("state2", state2);
+console.log("state3", state3);
+
+console.log('state1 === state2',state1 === state2);
+console.log('state1 === state3', state1 === state3);
+
+const state4 = {... state1, a:"uuuuu"};
+console.log(state4);
